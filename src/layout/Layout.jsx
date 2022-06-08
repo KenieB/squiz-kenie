@@ -6,7 +6,7 @@ function Layout() {
     <Row style={{ height: "100vh" }} id="root-layout-row">
       <Col
         xs={12}
-        md={{ span: 10, offset: 1 }}
+        xl={{ span: 10, offset: 1 }}
         id="root-layout-col"
         className="mx-0 mx-sm-auto"
       >

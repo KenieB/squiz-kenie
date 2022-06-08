@@ -10,7 +10,7 @@ function DisplayList({ employerList, setEmployerList, appErr, setAppErr }) {
 
   async function getList() {
     const abortController = new AbortController();
-
+    setAppErr(null);
     try {
       const response = await loadList(abortController.signal);
       setEmployerList(response);
@@ -21,24 +21,19 @@ function DisplayList({ employerList, setEmployerList, appErr, setAppErr }) {
     return () => abortController.abort();
   }
 
-  /*const list = employerList.map((listItem) => (
+  const list = employerList.map((listItem) => (
     <ListItemLayout key={listItem.id} itm={listItem} />
-  ));*/
+  ));
 
-  const list = employerList.map((listItem) => console.log(listItem));
 
   useEffect(() => {
     getList();
-    //console.log("----------------------- getList() -----------------------");
-    //employerList.forEach((r) => console.log(r));
-    // console.log("---------------------------------------------------------");
   }, []);
 
   return (
     <>
-      <Col>
-        <h2>DisplayList.jsx</h2>
-        <CardGroup></CardGroup>
+      <Col id="display-list-col" className="py-2">
+        <CardGroup className="w-100 justify-content-center">{list}</CardGroup>
       </Col>
     </>
   );

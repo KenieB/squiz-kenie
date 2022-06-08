@@ -10,7 +10,7 @@ import { Alert } from "react-bootstrap";
 function ErrorAlert({ error }) {
   return (
     error && (
-      <Alert key="danger" variant="danger" className="text-center">
+      <Alert key="danger" variant="danger" className="text-center p-3">
         Error: {error.message}
       </Alert>
     )
