@@ -8,15 +8,17 @@ import NotFound from "./utils/NotFound";
 
 function App() {
   const [employerList, setEmployerList] = useState([]);
+  const [showingList, setShowingList] = useState([]);
   const [sortListBy, setSortListBy] = useState("");
   // sortListBy possible values: [ "name-asc", "name-desc", "employees-asc", "employees-desc" ]
-  const [filterListBy, setFilterListBy] = useState("");
-  // filterListBy possible values: [ "country", "industry" ]
-  const [filterListFlag, setFilterListFlag] = useState(false);
+  const [filterListByCountry, setFilterListByCountry] = useState("");
+  const [filterListByIndustry, setFilterListByIndustry] = useState("");
   const [countryFilterOptions, setCountryFilterOptions] = useState([]);
   const [industryFilterOptions, setIndustryFilterOptions] = useState([]);
+  const [countryFilterMap, setCountryFilterMap] = useState(new Map());
+  const [industryFilterMap, setIndustryFilterMap] = useState(new Map());
   const [appErr, setAppErr] = useState(null);
-
+  
   return (
     <Container
       fluid
@@ -31,16 +33,22 @@ function App() {
               <Home
                 employerList={employerList}
                 setEmployerList={setEmployerList}
+                showingList={showingList}
+                setShowingList={setShowingList}
                 sortListBy={sortListBy}
                 setSortListBy={setSortListBy}
-                filterListBy={filterListBy}
-                setFilterListBy={setFilterListBy}
-                filterListFlag={filterListFlag}
-                setFilterListFlag={setFilterListFlag}
+                filterListByCountry={filterListByCountry}
+                setFilterListByCountry={setFilterListByCountry}
+                filterListByIndustry={filterListByIndustry}
+                setFilterListByIndustry={setFilterListByIndustry}
                 countryFilterOptions={countryFilterOptions}
                 setCountryFilterOptions={setCountryFilterOptions}
                 industryFilterOptions={industryFilterOptions}
                 setIndustryFilterOptions={setIndustryFilterOptions}
+                countryFilterMap={countryFilterMap}
+                setCountryFilterMap={setCountryFilterMap}
+                industryFilterMap={industryFilterMap}
+                setIndustryFilterMap={setIndustryFilterMap}
                 appErr={appErr}
                 setAppErr={setAppErr}
               />
