@@ -18,7 +18,7 @@ function App() {
   const [countryFilterMap, setCountryFilterMap] = useState(new Map());
   const [industryFilterMap, setIndustryFilterMap] = useState(new Map());
   const [appErr, setAppErr] = useState(null);
-  
+
   return (
     <Container
       fluid
